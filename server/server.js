@@ -3,9 +3,11 @@ require("dotenv").config();
 const express = require("express");
 const http = require("http");
 const { Server } = require("socket.io");
+const path = require("path");
 const app = express();
 
 const port = process.env.PORT || 5000;
+const path = path.join(__dirname, "server", "dist");
 const server = http.createServer(app);
 
 const io = new Server(server, {
